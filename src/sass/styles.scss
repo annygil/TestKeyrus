@@ -1,0 +1,46 @@
+
+@import './variables';
+body  {
+  color:$textcolor;
+}
+.btn  {
+  display: inline-block;
+  background-color: $blue;
+}
+.alert--green  {
+  background-color: $green;
+  text-align: end;
+}
+.alert--red  {
+  background-color: $red;
+  text-align: end;
+}
+a  {
+  color: $blue !important;
+}
+.icon  {
+  float:left;
+  vertical-align: middle;
+}
+.info-keyrus  {
+  border: 5px solid;
+  border:1px solid $textcolor;
+  border-radius:15px;
+}
+.title  {
+  font-size:$fontsizelarge;
+  font-weight: 600;
+}
+.underline  {
+  text-decoration-line: underline;
+  font-weight: bold;
+  font-size: 16px
+}
+.secondlink  {
+
+  font-size: 12px
+}
+.company  {
+  font-style: italic;
+}
+
