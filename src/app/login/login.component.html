@@ -1,32 +1,32 @@
-
 <div class="col-12 col-sm-10 col-md-10" style="margin: auto"> 
-  <div class="alert alert-success alert--green" role="alert">
+  <div class="alert alert-success alert--green"  *ngIf="isSubmited" role="alert">
     <i class="fa fa-check icon icon--green text-left" ></i>
-
-    A simple success alert—check it out!
+    Voce foi logado com sucesso
   </div>
-  <div class="alert alert-danger alert--red" role="alert">
+  <div class="alert alert-danger alert--red" *ngIf="frmSignup.controls['username'].hasError('required') " role="alert">
     <i class="fa fa-times icon icon--red text-left" ></i>
-    A simple danger alert—check it out!
+    Digite seu email
   </div>
-
-  <div class="card col-4" style="margin:auto">
+  <div class="alert alert-danger alert--red" *ngIf="frmSignup.controls['password'].hasError('required') " role="alert">
+    <i class="fa fa-times icon icon--red text-left" ></i>
+    Digite seu senha
+  </div>
+  <div class="card col-md-4" style="margin:auto">
     <div class="card-body">
-      <form class=" ">
+      <form [formGroup]="frmSignup" (submit)="submit()">
         <div class="form-group text-center">
           <label class="title">Entrar na minha conta</label>
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <input type="email" id="username" formControlName="username" class="form-control input--mod " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+          <input type="password" id="password" formControlName="password" class="form-control input--mod" id="exampleInputPassword1" placeholder="Senha">
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-primary btn-lg" >Entrar</button>
         </div>
       </form>
-
     </div>
   </div>
   <div class="col-12 text-center">
@@ -34,9 +34,7 @@
     <p class="secondlink ">Esqueceu sua senha? <a>Clique aqui</a>.</p>
   </div>
   <div class="col-6 text-center" style="margin : auto">
-
-    <div class="alert alert-light info-keyrus" role="alert" >
-      
+    <div class="alert alert-light info-keyrus" role="alert" > 
       <i class="fa fa-info text-left icon" ></i>
       <div  class="text-center company" >
         keyrus
